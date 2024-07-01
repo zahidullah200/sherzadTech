@@ -1,0 +1,45 @@
+{{- $image := resources.Get "images/Wave.svg" -}}
+<!DOCTYPE html>
+<html lang="en">
+
+{{- partial "head.html" . -}}
+
+<body>
+  <div class="page">
+    <div class="navigation">
+      {{- partial "navigation.html" . -}}
+      <div class="head-img" style=" position:relative; top: 3px; z-index:32; ">
+        <img src="{{ $image.RelPermalink }}" alt="" style="height: 65px; width:100%;">
+
+      </div>
+    </div>
+
+
+    <div class="content container">
+
+      <p>
+        {{ block "content" . }}
+        {{ end }}
+      </p>
+
+
+
+    </div>
+
+    <div class="spacer-foot">
+
+
+
+    </div>
+
+    <div class="footer">
+      {{- partial "footer.html" . -}}
+    </div>
+  </div>
+
+
+</body>
+
+
+
+</html>
